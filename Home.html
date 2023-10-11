@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="Footer.css">
+
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+</style>
+</head>
+<body style="background-color:#e2d7b4;">
+
+<div class="navbar">
+  <a href="Home.html">Home</a>
+  <a href="Location.html">Location</a>
+  <div class="dropdown">
+    <button class="dropbtn">Services 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Package A.html">Package A</a>
+      <a href="Package B.html">Package B</a>
+      <a href="Package C.html">Package C</a>
+    </div>
+  </div> 
+  <a href="Gallery.html">Gallery</a>
+  <a href="Forms.html">Forms</a>
+</div>
+
+<br><br>
+<center><h1 allign="center" style="color:#e88504;"> Yonder in Siargao</h1>
+<h2 allign="center" style="font-family:Tahoma;"> Wanna adventure with us? </h2>
+<h2 allign="center" style="font-family:Tahoma;"> Venture into uncharted territories, where breathtaking landscapes and hidden gems await your exploration.</h2>
+</center>
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <img src="Images/slideshow 1.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="Images/slideshow 2.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="Images/slideshow 3.jpg" style="width:100%">
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<center><h2 allign="center" style="font-family:Tahoma;"> Are you ready to unleash your inner adventurer? Brace yourself for a thrilling escapade that will ignite your senses and redefine your limits. Join us on an unforgettable expedition where every step is a story and every moment is an experience waiting to be lived.</h2>
+<img src="Images/Siargao home.gif" width="700" height="500">
+<br><br>
+<h2>Embrace uncertainty because adventure begins at the end of your comfort zone. </h2>
+<br>
+<h2>Follow us at:</h2>
+<p><a href="https://www.facebook.com/yonderinsiargao?mibextid=9R9pXO">Facebook</a></p>
+<p><a href="https://instagram.com/yonderinsiargao?igshid=MzRlODBiNWFlZA==">Instagram</a></p>
+<p><a href="https://www.tiktok.com/@yonderinsiargao?_t=8gMLBoespE2&_r=1">Tiktok</a></p>
+</center>
+
+<br><br>
+<!--Footer-->
+      <footer class="footer-distributed">
+        <div class="footer-left">
+
+            <h3>Contact Us</h3>
+            <p class="contact-numbers">
+              <p>+63 995 815 9447</p>
+              <p>yonderinsiargao@gmail.com</p>
+              <img src="Images/yonder logo.jpg" width="200" height="200">
+              <br> <br>
+              <p>Ashley Ong</p>
+        </div>
+        <div class="footer-right">
+
+            <p>Contact Us</p>
+
+            <form action="#" method="post">
+
+                <input type="text" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button>Send</button>
+            </form>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
